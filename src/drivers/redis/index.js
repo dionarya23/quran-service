@@ -4,7 +4,6 @@ const { myLogger } = require('../../helpers/logger');
 const redisOptions = {
   host: process.env.REDIS_HOST,
   port: process.env.REDIS_PORT,
-  password: process.env.REDIS_PASSWORD,
   prefix: 'quran-service-',
   legacyMode: true,
 };

@@ -8,6 +8,10 @@
     "dev": "nodemon ./src/interfaces/http/index.js",
     "lint": "eslint ./"
   },
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=6.0.0"
+  },
   "author": "Dion Arya Pamungkas",
   "license": "ISC",
   "devDependencies": {
