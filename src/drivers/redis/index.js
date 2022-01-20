@@ -6,7 +6,6 @@ const redisOptions = {
   port: process.env.REDIS_PORT,
   password: process.env.REDIS_PASSWORD,
   prefix: 'quran-service-',
-  legacyMode: true,
 };
 
 if (['production', 'staging', 'dev'].includes(process.env.NODE_ENV)) {
