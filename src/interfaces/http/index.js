@@ -9,6 +9,7 @@ const { myLogger } = require('../../helpers/logger');
 const errorHandler = require('./middlewares/errorHandler');
 const originCors = require('../../../config/cors');
 const routes = require('./routes/index');
+// require('../../drivers/index');
 
 const basePath = process.env.BASE_PATH || '/';
 const app = express();
