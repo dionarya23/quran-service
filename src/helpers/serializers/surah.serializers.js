@@ -1,3 +1,5 @@
+const { setRedisData, getRedisData } = require('../redis');
+
 const responseSerialize = async (data, surahId) => {
   const surahBuilder = {
     id: surahId,
@@ -16,6 +18,7 @@ const responseSerialize = async (data, surahId) => {
       ayat_number: i + 1,
     });
   }
+  await setRedisData(`surah_${surahId}`, surahBuilder);
   return surahBuilder;
 };
 
@@ -23,6 +26,10 @@ module.exports = {
   async serialize(data, surahId) {
     if (!data) {
       throw new Error('Expect data to be not undefined nor null');
+    }
+    const surah = await getRedisData(`surah_${surahId}`);
+    if (surah) {
+      return surah;
     }
     return responseSerialize(data, surahId);
   },

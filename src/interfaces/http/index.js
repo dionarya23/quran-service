@@ -37,11 +37,11 @@ app.use((req, res, next) => {
 
 app.use(errorHandler);
 
-app.listen(process.env.REST_PORT || 3000);
+app.listen(process.env.PORT || 3000);
 
 myLogger.info(
   'express',
-  `Server running on port: ${process.env.REST_PORT || 3000}`,
+  `Server running on port: ${process.env.PORT || 3000}`,
 );
 
 module.exports = app;
